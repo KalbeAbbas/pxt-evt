@@ -11,13 +11,10 @@ namespace evt_test {
      * Events can have arguments before the handler
      */
     //% block="on loop $topic"
-    export function onLoop(topic: string, handler: () => void)
-    {
-        while(true)
-        {
-            basic.showNumber(num)
-            basic.pause(100)
-            num++
+    export function onLoop(topic: string, handler: () => void) {
+        while (true) {
+            control.raiseEvent(EventBusSource.MICROBIT_ID_BUTTON_AB, EventBusValue.MICROBIT_BUTTON_EVT_CLICK)
+            basic.pause(1000)
         }
     }
 
@@ -29,5 +26,15 @@ namespace evt_test {
         basic.showString(topic)
 
     }
+
+    //% block="catch Event
+    export function catchEvent(topic: string, handler: () => void) {
+        control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_AB, EventBusValue.MICROBIT_BUTTON_EVT_CLICK, function () {
+            basic.showString("Event raised!")
+            
+        })
+
+    }
+
 
 }
