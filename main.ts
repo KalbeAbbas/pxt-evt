@@ -27,11 +27,11 @@ namespace evt_test {
 
     }
 
-    //% block="catch Event
+    //% block="catch Event"
     export function catchEvent(topic: string, handler: () => void) {
         control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_AB, EventBusValue.MICROBIT_BUTTON_EVT_CLICK, function () {
             basic.showString("Event raised!")
-            
+
         })
 
     }
