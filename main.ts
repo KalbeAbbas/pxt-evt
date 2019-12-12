@@ -32,5 +32,11 @@ namespace evt_test {
         })
     }
 
+    //% block="$myParam"
+    //% myParam.shadow="myShadowBlockID"
+    function myFunction(myParam: number): void {
+        
+    }
+
 
 }
